@@ -26,8 +26,16 @@ namespace PartyInvites2.Controllers
         [HttpPost]
         public ViewResult RsvpForm(GuestResponse guestResponse)
         {
-            // TODO: email
-            return View("Thanks", guestResponse);
+            if (ModelState.IsValid)
+            {
+                // TODO: email
+                return View("Thanks", guestResponse);
+            }
+            else
+            {
+                // validation error
+                return View();
+            }
         }
     }
 }
