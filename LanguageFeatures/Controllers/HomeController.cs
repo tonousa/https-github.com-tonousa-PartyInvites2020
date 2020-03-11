@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using LanguageFeatures.Models;
+using System.Text;
 
 namespace LanguageFeatures.Controllers
 {
@@ -126,12 +127,41 @@ namespace LanguageFeatures.Controllers
             //Func<Product, bool> categoryFilter = prod => prod.Category == "Soccer";
 
             decimal total = 0;
-            foreach (Product prod in products.Filter(prod => prod.Category == "Soccer"))
+            foreach (Product prod in products
+                .Filter(prod => prod.Category == "Soccer" || prod.Price > 20))
             {
                 total += prod.Price;
             }
 
             return View("Result", (object)String.Format("total: {0}", total));
+        }
+
+        public ViewResult FindProducts()
+        {
+            Product[] productArray =
+            {
+                    new Product {Name="lakjsdf", Price=78M },
+                    new Product {Name="lakjsdf", Price=78M },
+                    new Product {Name="lakjsdf", Price=78M },
+                    new Product {Name="lakjsdf", Price=78M }
+            };
+
+            var foundProducts = from match in productArray
+                                orderby match.Price descending
+                                select new { match.Name, match.Price };
+
+            int count = 0;
+            StringBuilder sb = new StringBuilder();
+            foreach (var p in foundProducts)
+            {
+                sb.AppendFormat("Price: {0} ", p.Price);
+                if (++count == 3)
+                {
+                    break;
+                }
+            }
+
+            return View("Result", sb.ToString());
         }
     }
 }
