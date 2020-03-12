@@ -146,19 +146,25 @@ namespace LanguageFeatures.Controllers
                     new Product {Name="lakjsdf", Price=78M }
             };
 
-            var foundProducts = from match in productArray
-                                orderby match.Price descending
-                                select new { match.Name, match.Price };
+            //var foundProducts = from match in productArray
+            //                    orderby match.Price descending
+            //                    select new { match.Name, match.Price };
 
-            int count = 0;
+            var foundProducts = productArray.OrderByDescending(e => e.Price)
+                .Take(3)
+                .Select(e => new { e.Name, e.Price });
+
+            productArray[2] = new Product { Name = "Stadium", Price = 79600M };
+
+            //int count = 0;
             StringBuilder sb = new StringBuilder();
             foreach (var p in foundProducts)
             {
                 sb.AppendFormat("Price: {0} ", p.Price);
-                if (++count == 3)
-                {
-                    break;
-                }
+                //if (++count == 3)
+                //{
+                //    break;
+                //}
             }
 
             return View("Result", sb.ToString());
