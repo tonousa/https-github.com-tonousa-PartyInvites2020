@@ -23,5 +23,12 @@ namespace Razor.Controllers
         {
             return View(myProd);
         }
+
+        public ActionResult NameAndPrice()
+        {
+            return View(myProd);
+        }
+
     }
+
 }
