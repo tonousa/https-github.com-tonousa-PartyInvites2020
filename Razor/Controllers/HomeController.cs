@@ -29,6 +29,15 @@ namespace Razor.Controllers
             return View(myProd);
         }
 
+        public ActionResult DemoExpression()
+        {
+            ViewBag.ProductCount = 1;
+            ViewBag.ExpressShip = true;
+            ViewBag.ApplyDiscount = false;
+            ViewBag.Supplier = null;
+
+            return View(myProd);
+        }
     }
 
 }
