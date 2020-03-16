@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguageFeatures", "Languag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Razor", "Razor\Razor.csproj", "{FA9E7A33-5500-4306-94F7-97E6BB3F1D50}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{97323807-F2F1-4C61-8016-BB0E5AF1CBB0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{FA9E7A33-5500-4306-94F7-97E6BB3F1D50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA9E7A33-5500-4306-94F7-97E6BB3F1D50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA9E7A33-5500-4306-94F7-97E6BB3F1D50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97323807-F2F1-4C61-8016-BB0E5AF1CBB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97323807-F2F1-4C61-8016-BB0E5AF1CBB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97323807-F2F1-4C61-8016-BB0E5AF1CBB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97323807-F2F1-4C61-8016-BB0E5AF1CBB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
