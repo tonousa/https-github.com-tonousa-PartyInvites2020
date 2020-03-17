@@ -32,8 +32,10 @@ namespace WebApplication1.Infrastructure
         {
             kernel.Bind<IValueCalculator>()
                 .To<LinqValueCalculator>();
+            //kernel.Bind<IDiscountHelper>()
+            //    .To<DefaultDiscountHelper>().WithPropertyValue("DiscountSize", 50M);
             kernel.Bind<IDiscountHelper>()
-                .To<DefaultDiscountHelper>().WithPropertyValue("DiscountSize", 50M);
+                .To<DefaultDiscountHelper>().WithConstructorArgument("discountParam", 50M);
         }
     }
 }
