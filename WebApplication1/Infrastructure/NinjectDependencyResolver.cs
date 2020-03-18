@@ -36,6 +36,8 @@ namespace WebApplication1.Infrastructure
             //    .To<DefaultDiscountHelper>().WithPropertyValue("DiscountSize", 50M);
             kernel.Bind<IDiscountHelper>()
                 .To<DefaultDiscountHelper>().WithConstructorArgument("discountParam", 50M);
+            kernel.Bind<IDiscountHelper>().To<FlexibleDiscountHelper>()
+                .WhenInjectedInto<LinqValueCalculator>();
         }
     }
 }
