@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using WebApplication1.Models;
 using Ninject;
+using Ninject.Web.Common;
 using System.Web.Mvc;
 
 namespace WebApplication1.Infrastructure
@@ -30,8 +31,7 @@ namespace WebApplication1.Infrastructure
 
         private void AddBindings()
         {
-            kernel.Bind<IValueCalculator>()
-                .To<LinqValueCalculator>();
+            kernel.Bind<IValueCalculator>().To<LinqValueCalculator>().InRequestScope();
             //kernel.Bind<IDiscountHelper>()
             //    .To<DefaultDiscountHelper>().WithPropertyValue("DiscountSize", 50M);
             kernel.Bind<IDiscountHelper>()
